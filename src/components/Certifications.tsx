@@ -7,13 +7,29 @@ const Certifications = () => {
       title: "Salesforce Associate",
       issuer: "Salesforce",
       year: "2023",
-      description: "Foundation-level certification demonstrating understanding of Salesforce platform fundamentals"
+      description: "Foundation-level certification demonstrating understanding of Salesforce platform fundamentals",
+      image: "/associate.jpeg"
     },
     {
       title: "Salesforce Certified Platform Developer I",
       issuer: "Salesforce",
+      year: "2024",
+      description: "Professional certification validating skills in custom application development using Apex and Visualforce",
+      image: "/pd1.jpeg"
+    },
+    {
+      title: "Salesforce Certified Agentforce Specialist",
+      issuer: "Salesforce",
+      year: "2025",
+      description: "Professional certification validating skills in custom application development using Apex and Visualforce",
+      image: "/agent.jpeg"
+    },
+    {
+      title: "Devops Launchapad Certified Lightning Web Component Specialist",
+      issuer: "Salesforce",
       year: "2023",
-      description: "Professional certification validating skills in custom application development using Apex and Visualforce"
+      description: "Professional certification validating skills in custom application development using Apex and Visualforce",
+      image: "/lwc.jpeg"
     }
   ];
 
@@ -34,9 +50,16 @@ const Certifications = () => {
           {certifications.map((cert, index) => (
             <div 
               key={index}
-              className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden"
+              style={{
+                backgroundImage: `url(${cert.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
             >
-              <div className="flex items-start space-x-4">
+              <div className="absolute inset-0 bg-white/80 pointer-events-none"></div>
+              <div className="flex items-start space-x-4 relative z-10">
                 <div className="flex-shrink-0 p-3 bg-blue-600 rounded-lg">
                   <Award className="w-6 h-6 text-white" />
                 </div>
